@@ -1,13 +1,11 @@
+use bezier_curves::point::Point;
+
 use raylib::prelude::*;
 
 const WIDTH: i32 = 640;
 const HEIGHT: i32 = 480;
 const FPS: u32 = 60;
-#[derive(Debug)]
-struct Point {
-    pub x: i32,
-    pub y: i32,
-}
+
 fn interpolate(p1: &Point, p2: &Point, t: f32) -> Point {
     let t_sin = (f32::sin(t) + 1.0) / 2.0;
     let bezier_p = Point {
